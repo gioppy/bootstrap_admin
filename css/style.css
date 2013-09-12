@@ -1,0 +1,178 @@
+/*BLOCKS*/
+
+#blocks .region-populated{
+display:none;
+}
+
+.drag-previous{
+background-color:#FCF8E3;
+}
+
+/*MODULE FILTER*/
+
+#module-filter-show-wrapper input{
+float:none;
+}
+
+#module-filter-show-wrapper label{
+display:inline;
+}
+
+/*MEDIA*/
+
+form .field-multiple-table td.field-multiple-drag{
+vertical-align:middle;
+}
+
+div.ctools-modal-content,
+.ui-dialog{
+border:none;
+border-radius:4px;
+padding:0.2em;
+box-shadow: 0px 0px 4px #898989;
+}
+
+.ui-dialog{
+padding:0.5em;
+}
+
+div.ctools-modal-content fieldset,
+div.ctools-modal-content .form-radios,
+div.ctools-modal-content .form-checkboxes{
+clear:none;
+}
+
+div.ctools-modal-content .modal-header{
+padding:0.5em;
+background-color:#EEEEEE;
+}
+
+div.ctools-modal-content .modal-title,
+div.ctools-modal-content a.close{
+color:#333333;
+font-weight:normal;
+}
+
+div.ctools-modal-content a.close{
+opacity:1;
+color:#0088CC;
+font-size:1em;
+}
+
+div.ctools-modal-content a.close img{
+display:none;
+}
+
+.media-item img{
+margin-bottom:15px;
+}
+
+.media-item .label-wrapper label{
+margin-bottom:0;
+}
+
+#media-browser-tabset #branding{
+padding:0;
+background-color:#EEEEEE;
+border-radius:4px;
+margin:0 0 0.5em 0;
+}
+
+#media-browser-tabset #branding h1{
+margin:0;
+padding:0.5em;
+}
+
+#media-tabs-wrapper ul.ui-tabs-nav{
+padding:0;
+margin:0;
+border:none;
+border-radius:0;
+}
+
+.ui-tabs .ui-tabs-nav li,
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected{
+padding:0;
+margin:0;
+border:none;
+border-radius:0;
+top:0;
+background:none;
+}
+
+.ui-tabs .ui-tabs-nav li a{
+margin:0;
+border-radius:0;
+color:#777777;
+border:none;
+}
+
+.ui-tabs .ui-tabs-nav li a:hover,
+.ui-tabs .ui-tabs-nav li a:focus,
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected a{
+background-color:#D5D5D5;
+color:#555555;
+}
+
+.media-browser-tab.ui-tabs-panel{
+padding:1em;
+border:1px solid #E3E3E3;
+border-radius:4px;
+}
+
+/*VIEWS*/
+
+ul#views-display-menu-tabs li.add ul.action-list li{
+background:#f1f1f1;
+}
+
+.views-displays .secondary .action-list input.form-submit{
+color:#0088CC;
+text-shadow:none;
+}
+
+.container-inline div,
+.container-inline label{
+display:inline;
+}
+
+.views-ui-display-tab-bucket + .views-ui-display-tab-bucket{
+margin:auto;
+padding:0;
+}
+
+.views-ui-dialog .ui-dialog-titlebar{
+border:none;
+}
+
+.views-ui-dialog #views-ajax-title,
+.views-ui-dialog .views-override,
+.views-ui-dialog .form-buttons{
+background-color:#eee;
+padding:0.5em;
+}
+
+.views-ui-dialog .ui-dialog-titlebar-close{
+border:none;
+background-color:transparent;
+top:5px;
+right:5px;
+box-shadow:none;
+}
+
+/*WEBFORM*/
+
+.webform-container-inline label{
+display:inline;
+}
+
+.webform-container-inline.form-type-radio input,
+.webform-container-inline.form-type-checkbox input{
+float:none;
+}
+
+/*PERMISSIONS*/
+
+#permissions .module{
+font-weight:bold;
+}
