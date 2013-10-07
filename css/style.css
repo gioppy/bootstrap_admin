@@ -1,3 +1,19 @@
+/*LANGUAGE BAR*/
+
+#navbar .container{
+position:relative;
+}
+
+.language-bar{
+position:absolute;
+right:0;
+top:0;
+}
+
+.language-bar form{
+margin:5px 0 0 0;
+}
+
 /*BLOCKS*/
 
 #blocks .region-populated{
