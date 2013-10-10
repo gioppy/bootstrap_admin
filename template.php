@@ -9,3 +9,4 @@ if (!defined('__DIR__')) {
   define('__DIR__', dirname(__FILE__));
 }
 require_once __DIR__ . '/includes/form.inc';
+require_once __DIR__ . '/includes/block.inc';

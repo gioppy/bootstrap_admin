@@ -14,6 +14,15 @@ top:0;
 margin:5px 0 0 0;
 }
 
+.language-bar ul{
+margin:5px;
+}
+
+.language-bar li{
+display:inline;
+margin:0 0 0 5px;
+}
+
 /*BLOCKS*/
 
 #blocks .region-populated{
