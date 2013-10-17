@@ -23,6 +23,8 @@ features[] = name
 features[] = slogan
 features[] = favicon
 
+settings[shortcut_module_link] = 1
+
 ;**********************************
 ; METHOD 1: Bootstrap Source Files
 ;**********************************
