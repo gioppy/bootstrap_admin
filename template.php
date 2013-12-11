@@ -5,16 +5,18 @@
  */
 
 // Provide < PHP 5.3 support for the __DIR__ constant.
-if (!defined('__DIR__')) {
-  define('__DIR__', dirname(__FILE__));
-}
-require_once __DIR__ . '/includes/form.inc';
-require_once __DIR__ . '/includes/block.inc';
+define('_DIR_', dirname(__FILE__));
+require_once _DIR_ . '/includes/form.inc';
+require_once _DIR_ . '/includes/block.inc';
 
 /**
  * Implements hook_preprocess_page().
  */
 function bootstrap_admin_preprocess_page(&$variables){
+  $themes = theme_get_setting('theme');
+  if($themes != 'default'){
+    drupal_add_css(path_to_theme() . '/themes/' . $themes . '/bootstrap.min.css', array('group' => CSS_THEME, 'weight' => 100));
+  }
   // Only display the shortcut link if the user has the ability to edit
   // shortcuts and if the page's actual content is being shown (for example,
   // we do not want to display it on "access denied" or "page not found"

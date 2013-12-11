@@ -206,3 +206,9 @@ float:none;
 #permissions .module{
 font-weight:bold;
 }
+
+/*UPDATE*/
+
+table.table-striped tbody tr.update-security td{
+background:#F2DEDE;
+}
