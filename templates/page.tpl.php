@@ -35,11 +35,9 @@
           </nav>
         </div>
       <?php endif; ?>
-      <?php if(!empty($page['language_bar'])): ?>
       <div class="language-bar">
-        <?php print render($page['language_bar']); ?>
+        <?php print _bootstrap_admin_theme_set_languages(); ?>
       </div>
-      <?php endif; ?>
     </div>
   </div>
 </header>

@@ -2,7 +2,7 @@
 /**
  * Implement hook_block_view_MODULE_DELTA_alter().
  */
-function bootstrap_admin_block_view_locale_language_alter(&$data, $block){
+function bootstrap_admin_theme_block_view_locale_language_alter(&$data, $block){
   $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
   $links = language_negotiation_get_switch_links($block->delta, $path);
   
