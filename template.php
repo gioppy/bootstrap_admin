@@ -12,16 +12,12 @@ require_once _DIR_ . '/includes/block.inc';
 /**
  * Implements hook_preprocess_page().
  */
-function bootstrap_admin_preprocess_page(&$variables){
-  $themes = theme_get_setting('theme');
-  if($themes != 'default'){
-    drupal_add_css(path_to_theme() . '/themes/' . $themes . '/bootstrap.min.css', array('group' => CSS_THEME, 'weight' => 100));
-  }
+function bootstrap_admin_theme_preprocess_page(&$variables){
   // Only display the shortcut link if the user has the ability to edit
   // shortcuts and if the page's actual content is being shown (for example,
   // we do not want to display it on "access denied" or "page not found"
   // pages).
-  if (shortcut_set_edit_access() && ($item = menu_get_item()) && $item['access']) {
+  if (module_exists('shortcut') && shortcut_set_edit_access() && ($item = menu_get_item()) && $item['access']) {
     if (theme_get_setting('shortcut_module_link')) {
       $shortcut_link = $variables['title_suffix']['add_or_remove_shortcut'];
       $link_text = strip_tags($shortcut_link['#title'], '<em>');
@@ -37,5 +33,32 @@ function bootstrap_admin_preprocess_page(&$variables){
         '#suffix' => '</div></div>',
       );
     }
+  }
+}
+
+/**
+ * Utility function for returning active languages
+ * 
+ * @return HTML List
+ */
+function _bootstrap_admin_theme_set_languages(){
+  if(drupal_multilingual() && module_exists('i18n')){
+    $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
+    //get only language type
+    $types = language_types_configurable(FALSE);
+    $type = array_keys($types, 'language');
+    $links = language_negotiation_get_switch_links($types[$type[0]], $path);
+
+    if (isset($links->links)) {
+      foreach($links->links as $link){
+        $links->links[$link['language']->language]['attributes']['class'] = array('language-link', 'btn', 'btn-info', 'btn-mini');
+      }
+      $class = "language-switcher-{$links->provider}";
+      $variables = array('links' => $links->links, 'attributes' => array('class' => array($class)));
+      $output = theme('links__locale_block', $variables);
+      return $output;
+    }
+  }else{
+    return;
   }
 }

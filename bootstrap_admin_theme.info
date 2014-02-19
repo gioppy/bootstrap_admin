@@ -1,0 +1,13 @@
+name = Bootstrap Admin Theme
+description = An admin theme bades on Bootstrap and inspired by OA Radix used in Open Atrium 2.
+core = 7.x
+base theme = bootstrap
+
+; Stylesheets
+stylesheets[all][] = css/style.css
+
+; Features
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = favicon
