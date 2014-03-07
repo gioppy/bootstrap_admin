@@ -44,6 +44,11 @@ left:auto;
 right:0;
 }
 
+.add-or-remove-shortcuts .dropdown-menu{
+left:0;
+right:auto;
+}
+
 .navbar .logo img{
 max-height:30px;
 width:auto;
