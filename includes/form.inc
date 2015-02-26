@@ -189,3 +189,26 @@ function bootstrap_admin_theme_mark($variables){
     }
   }
 }
+
+/**
+ * Implement hook_field_group_pre_render_alter.
+ */
+function bootstrap_admin_theme_field_group_pre_render_alter(&$element, $group, &$form) {
+  if($group->format_type == 'htab'){
+    $element['#attributes']['class'][] = 'tab-pane';
+  }
+}
+
+/**
+ * Returns HTML for an element's children fieldsets as horizontal tabs.
+ */
+function bootstrap_admin_theme_horizontal_tabs($variables) {
+  $element = $variables['element'];
+  // Add required JavaScript and Stylesheet.
+  $element['#attached']['library'][] = array('field_group', 'horizontal-tabs');
+
+  $output = '<h2 class="element-invisible">' . (!empty($element['#title']) ? $element['#title'] : t('Horizontal Tabs')) . '</h2>';
+  $output .= '<div class="horizontal-tabs-panes tab-content">' . $element['#children'] . '</div>';
+
+  return $output;
+}

@@ -34,6 +34,10 @@ function bootstrap_admin_theme_preprocess_page(&$variables){
       );
     }
   }
+  
+  if(module_exists('field_group')){
+    drupal_add_js(drupal_get_path('theme', 'bootstrap_admin_theme') . '/js/horizontal-tabs.js');
+  }
 }
 
 /**
