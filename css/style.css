@@ -842,8 +842,10 @@ margin:auto;
 padding:0;
 }
 
-.views-ui-dialog .ui-dialog-titlebar{
+.views-ui-dialog .ui-dialog-titlebar,
+.ui-dialog-titlebar{
 border:none;
+background:none;
 }
 
 .views-ui-dialog #views-ajax-title,
@@ -853,12 +855,22 @@ background-color:#eee;
 padding:0.5em;
 }
 
-.views-ui-dialog .ui-dialog-titlebar-close{
+.views-ui-dialog .ui-dialog-titlebar-close,
+.ui-dialog .ui-dialog-titlebar-close{
 border:none;
 background-color:transparent;
 top:5px;
 right:5px;
 box-shadow:none;
+width:auto;
+}
+
+.ui-dialog-titlebar-close:before{
+  content:'X';
+}
+
+form .dependent-options{
+margin-left:18px !important;
 }
 
 form .dependent-options{
