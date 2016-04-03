@@ -1,4 +1,20 @@
-<header id="navbar" role="banner" class="navbar navbar-fixed-top">
+<header id="navbar" role="banner" class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <?php if (!empty($logo)): ?>
+        <a class="navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+        </a>
+      <?php endif; ?>
+
+      <?php if (!empty($site_name) && empty($logo)): ?>
+        <a class="navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+          <?php print $site_name; ?>
+        </a>
+      <?php endif; ?>
+    </div>
+  </div>
+
   <div class="navbar-inner">
     <div class="container">
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
@@ -8,17 +24,9 @@
         <span class="icon-bar"></span>
       </a>
 
-      <?php if (!empty($logo)): ?>
-        <a class="logo pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-          <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-        </a>
-      <?php endif; ?>
 
-      <?php if (!empty($site_name)): ?>
-        <h1 id="site-name">
-          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" class="brand"><?php print $site_name; ?></a>
-        </h1>
-      <?php endif; ?>
+
+
 
       <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
         <div class="nav-collapse collapse">
@@ -42,25 +50,15 @@
   </div>
 </header>
 
-<div class="main-container container">
-
-  <header role="banner" id="page-header">
-    <?php if (!empty($site_slogan)): ?>
-      <p class="lead"><?php print $site_slogan; ?></p>
-    <?php endif; ?>
-
-    <?php print render($page['header']); ?>
-  </header> <!-- /#header -->
-
-  <div class="row-fluid">
-
+<div class="container main-container">
+  <div class="row">
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="span3" role="complementary">
+      <aside class="col-md-4" role="complementary">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
-    <?php endif; ?>  
+    <?php endif; ?>
 
-    <section class="<?php print _bootstrap_content_span($columns); ?>">  
+    <section class="<?php if (!empty($page['sidebar_first'])) print "col-md-8"; else print "col-md-12"; ?>">
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted hero-unit"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>

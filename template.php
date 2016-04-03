@@ -6,13 +6,13 @@
 
 // Provide < PHP 5.3 support for the __DIR__ constant.
 define('_DIR_', dirname(__FILE__));
-require_once _DIR_ . '/includes/form.inc';
-require_once _DIR_ . '/includes/block.inc';
+//require_once _DIR_ . '/includes/form.inc';
+//require_once _DIR_ . '/includes/block.inc';
 
 /**
  * Implements hook_preprocess_page().
  */
-function bootstrap_admin_theme_preprocess_page(&$variables){
+/*function bootstrap_admin_theme_preprocess_page(&$variables){
   // Only display the shortcut link if the user has the ability to edit
   // shortcuts and if the page's actual content is being shown (for example,
   // we do not want to display it on "access denied" or "page not found"
@@ -23,9 +23,9 @@ function bootstrap_admin_theme_preprocess_page(&$variables){
       $link_text = strip_tags($shortcut_link['#title'], '<em>');
       $link_path = $shortcut_link['#href'];
       $query = $shortcut_link['#options']['query'];
-      
+
       unset($variables['title_suffix']['add_or_remove_shortcut']['#attached']['css']);
-      
+
       $variables['title_suffix']['add_or_remove_shortcut'] = array(
         '#prefix' => '<div class="add-or-remove-shortcuts"><div class="btn-group dropup"><button class="btn btn-primary btn-mini">' . t('Add shortcut') . '</button><button class="btn dropdown-toggle btn-primary btn-mini" data-toggle="dropdown"><span class="caret"></span></button>',
         '#type' => 'markup',
@@ -34,15 +34,15 @@ function bootstrap_admin_theme_preprocess_page(&$variables){
       );
     }
   }
-  
+
   if(module_exists('field_group')){
     drupal_add_js(drupal_get_path('theme', 'bootstrap_admin_theme') . '/js/horizontal-tabs.js');
   }
-}
+}*/
 
 /**
  * Utility function for returning active languages
- * 
+ *
  * @return HTML List
  */
 function _bootstrap_admin_theme_set_languages(){
