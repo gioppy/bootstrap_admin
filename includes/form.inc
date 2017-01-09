@@ -35,7 +35,7 @@ function bootstrap_admin_theme_button($variables) {
 
   // Prepare input whitelist - added to ensure ajax functions don't break
   $whitelist = _bootstrap_element_whitelist();
-  
+
   return '<input' . drupal_attributes($element['#attributes']) . ">\n"; // This line break adds inherent margin between multiple buttons
 }
 
@@ -120,7 +120,7 @@ function bootstrap_admin_theme_links__ctools_dropbutton($vars){
     // Provide a unique identifier for every button on the page.
     static $id = 0;
     $id++;
-    
+
     // Wrapping div
     $class = 'ctools-no-js';
     $class .= ($is_drop_button) ? ' btn-group' : '';
@@ -132,7 +132,7 @@ function bootstrap_admin_theme_links__ctools_dropbutton($vars){
     $output = '';
 
     $output .= '<div class="' . $class . '" id="ctools-button-' . $id . '">';
-    
+
     $vars['title'] = ($vars['title'] ? check_plain($vars['title']) : t('actions'));
 
     // Add a twisty if this is a dropbutton
@@ -162,7 +162,7 @@ function bootstrap_admin_theme_links__ctools_dropbutton($vars){
         }
       }
     }
-    
+
     $vars['attributes']['class'][] = 'dropdown-menu';
 
     // Call theme_links to render the list of links.

@@ -491,6 +491,7 @@ padding:0.5em;
 
 .ui-widget-overlay{
 position:fixed;
+background: none;
 }
 
 div.ctools-modal-content fieldset,
